@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoulaim <msoulaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 15:59:45 by msoulaim          #+#    #+#             */
-/*   Updated: 2021/04/09 12:43:32 by msoulaim         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*get_cwd(t_shell *shell)
 	char	buf[4096 + 1];
 	char	*cwd;
 	char	*put;
-	int		i;
 	char	*tmp;
 
 	tmp = NULL;
@@ -26,7 +25,6 @@ char	*get_cwd(t_shell *shell)
 	tmp = get_var_env("HOME", shell);
 	if (tmp == NULL || ft_strlen(tmp) == 0)
 		return (ft_strdup(cwd));
-	i = 0;
 	if (ft_strnequ(cwd, tmp, ft_strlen(tmp)) == 1)
 	{
 		put = replace_in_str(cwd, tmp, "~");

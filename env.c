@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoulaim <msoulaim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 15:23:50 by msoulaim          #+#    #+#             */
-/*   Updated: 2021/01/17 12:51:17 by msoulaim         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:31:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*search_env(char *var, t_shell *shell)
 {
 	int		i;
-	int		j;
 	char	**g_env;
 	char	*tmp;
 
@@ -24,7 +23,6 @@ char	*search_env(char *var, t_shell *shell)
 	tmp = ft_strjoin(var, "=");
 	while (g_env[i])
 	{
-		j = 0;
 		if (ft_strncmp(tmp, g_env[i], ft_strlen(tmp)) == 0)
 		{
 			free(tmp);
